@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "comun.h": "c"
+        "comun.h": "c",
+        "curses.h": "c"
+        
     }
 }
