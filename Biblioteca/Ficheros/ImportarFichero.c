@@ -23,22 +23,13 @@ void ImportarFichero(LIBRO **Fichas,WINDOW *Wfichero,bool sumar)
     char nombreFichero[80];
     char linea[200];
     char *token;
-    int numLibros = 0;
     int numLibrosFichero = 0;
     LIBRO *aux;
     bool error = false;
 
 
-    // Crear la ventana si no está creada
-    if (Wfichero == NULL) {
-        Wfichero = newwin(10, 40, 5, 5);
-        box(Wfichero, 0, 0);
-        wrefresh(Wfichero);
-    }
 
-    // Capturar el nombre del fichero desde la ventana
-    mvwprintw(Wfichero, 1, 1, "Ingrese el nombre del fichero: ");
-    wgetstr(Wfichero, nombreFichero);
+
 
     // Abrir el fichero
     fichero = fopen(nombreFichero, "r");
@@ -61,28 +52,28 @@ void ImportarFichero(LIBRO **Fichas,WINDOW *Wfichero,bool sumar)
             error = true;
             break;
         }
-        strcpy((*Fichas)[numLibros].Titulo,token);
+        strcpy((*Fichas)[Estadisticas.NumeroFichas].Titulo,strsep(&token,"\n"));
         token = strtok(NULL,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
-        strcpy((*Fichas)[numLibros].ApellAutor,token);
+        strcpy((*Fichas)[Estadisticas.NumeroFichas].ApellAutor,strsep(&token,"\n"));
         token = strtok(NULL,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
-        strcpy((*Fichas)[numLibros].NomAutor,token);
+        strcpy((*Fichas)[Estadisticas.NumeroFichas].NomAutor,strsep(&token,"\n"));
         token = strtok(NULL,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
-        strcpy((*Fichas)[numLibros].Genero,token);
+        strcpy((*Fichas)[Estadisticas.NumeroFichas].Genero,strsep(&token,"\n"));
         token = strtok(NULL,";");
 
         if (token == NULL)
@@ -90,24 +81,24 @@ void ImportarFichero(LIBRO **Fichas,WINDOW *Wfichero,bool sumar)
             error = true;
             break;
         }
-        strcpy((*Fichas)[numLibros].Editorial,token);
+        strcpy((*Fichas)[Estadisticas.NumeroFichas].Editorial,strsep(&token,"\n"));
         token = strtok(NULL,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
-        strcpy((*Fichas)[numLibros].Coleccion,token);
+        strcpy((*Fichas)[Estadisticas.NumeroFichas].Coleccion,strsep(&token,"\n"));
 
         // Comprobamos si el libro tiene título y autor
-        if ((*Fichas)[numLibros].Titulo[0] == '\0' || (*Fichas)[numLibros].ApellAutor[0] == '\0' || (*Fichas)[numLibros].NomAutor[0] == '\0')
+        if ((*Fichas)[Estadisticas.NumeroFichas].Titulo[0] == '\0' || (*Fichas)[Estadisticas.NumeroFichas].ApellAutor[0] == '\0' || (*Fichas)[Estadisticas.NumeroFichas].NomAutor[0] == '\0')
         {
             error = true;
             break;
         }
 
         
-        numLibros++;
+        Estadisticas.NumeroFichas++;
     }
 
     // Cerrar el fichero
