@@ -28,6 +28,9 @@ void ImportarFichero(LIBRO **Fichas,WINDOW *Wfichero,bool sumar)
     bool error = false;
 
 
+    // Comprobamos si hay que sumar los libros del fichero a los existentes
+
+
 
 
 
