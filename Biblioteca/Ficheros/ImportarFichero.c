@@ -49,35 +49,35 @@ void ImportarFichero(LIBRO **Fichas,WINDOW *Wfichero,bool sumar)
     while (fgets(linea,200,fichero) != NULL)
     {
         // Separamos los campos del libro
-        token = strtok(linea,";");
+        token = strsep(linea,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
         strcpy((*Fichas)[Estadisticas.NumeroFichas].Titulo,strsep(&token,"\n"));
-        token = strtok(NULL,";");
+        token = strsep(NULL,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
         strcpy((*Fichas)[Estadisticas.NumeroFichas].ApellAutor,strsep(&token,"\n"));
-        token = strtok(NULL,";");
+        token = strsep(NULL,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
         strcpy((*Fichas)[Estadisticas.NumeroFichas].NomAutor,strsep(&token,"\n"));
-        token = strtok(NULL,";");
+        token = strsep(NULL,";");
         if (token == NULL)
         {
             error = true;
             break;
         }
         strcpy((*Fichas)[Estadisticas.NumeroFichas].Genero,strsep(&token,"\n"));
-        token = strtok(NULL,";");
+        token = strsep(NULL,";");
 
         if (token == NULL)
         {
@@ -85,7 +85,7 @@ void ImportarFichero(LIBRO **Fichas,WINDOW *Wfichero,bool sumar)
             break;
         }
         strcpy((*Fichas)[Estadisticas.NumeroFichas].Editorial,strsep(&token,"\n"));
-        token = strtok(NULL,";");
+        token = strsep(NULL,";");
         if (token == NULL)
         {
             error = true;
