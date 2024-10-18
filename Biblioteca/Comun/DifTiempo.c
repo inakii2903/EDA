@@ -14,5 +14,13 @@ int DifTiempo(struct timeval inicio,struct timeval fin)
 {
     
     // Codigo del alumno
+
+    int t_final, t_inicial;
+
+    // Devuelve la diferencia en microsegundos
+    
+    t_final = fin.tv_sec * 1000000 + fin.tv_usec;
+    t_inicial = inicio.tv_sec * 1000000 + inicio.tv_usec;
+    return t_final - t_inicial;
     
 }
