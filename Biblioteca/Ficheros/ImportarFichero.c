@@ -106,7 +106,5 @@ void ImportarFichero(LIBRO **Fichas,WINDOW *Wfichero,bool sumar)
 
     // Cerrar el fichero
     fclose(fichero);
-
-
-    
+       
 }
