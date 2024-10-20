@@ -19,15 +19,15 @@ void ExportarFichero(LIBRO **Fichas, WINDOW *Wfichero)
     char nombreFichero[80];
     int i;
     
-    // Abrir el fichero
+    // Leer el nombre del fichero
     mvwprintw(Wfichero, 1, 1, "Introduzca el nombre del fichero: ");
     wrefresh(Wfichero);
     echo();
-    wscanf(Wfichero, nombreFichero);
+    mvwscanw(Wfichero, 20, 30, nombreFichero, sizeof(nombreFichero) - 1);
     noecho();
-    fichero = fopen(nombreFichero, "w");
+    fichero = fopen(nombreFichero, "w+");
     if (fichero == NULL) {
-        mvwprintw(Wfichero, 2, 1, "Error al abrir el fichero.");
+        VentanaError("Error al abrir el fichero.");
         wrefresh(Wfichero);
         endwin();
         return;
