@@ -43,7 +43,7 @@ void ImportarFichero(LIBRO **Fichas, WINDOW *Wfichero, bool sumar) {
     mvwprintw(Wfichero, 1, 1, "Introduzca el nombre del fichero: ");
     wrefresh(Wfichero);
     echo();
-    mvwgetnstr(Wfichero, 1, 30, nombreFichero, sizeof(nombreFichero) - 1);
+    mvwscanw(Wfichero, 1, 30, nombreFichero, sizeof(nombreFichero) - 1);
     noecho();
 
     // Abrir el fichero en modo lectura

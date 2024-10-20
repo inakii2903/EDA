@@ -13,9 +13,7 @@
 
 
 void ExportarFichero(LIBRO **Fichas, WINDOW *Wfichero)
-{
-    // Código del alumno
-    
+{    
     // Variables
     FILE *fichero;
     char nombreFichero[80];
