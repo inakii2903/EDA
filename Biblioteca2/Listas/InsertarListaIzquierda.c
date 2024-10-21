@@ -14,6 +14,26 @@
 int InsertarListaIzquierda(LISTA *Lista, void *Elemento)
 {
     
-    // Código del Alumno
+    NODO *NodoAux;
+    
+    if (Lista == NULL) {
+        return -1;
+    }
+    
+    NodoAux=(NODO *)malloc(sizeof(NODO));
+    if (NodoAux == NULL) {
+        return -1;
+    }
+    
+    NodoAux->Elemento=Elemento;
+    NodoAux->Siguiente=Lista->Primero;
+    
+    Lista->Primero=NodoAux;
+    
+    if (Lista->Ultimo == NULL) {
+        Lista->Ultimo=NodoAux;
+    }
+    
+    return 0;
     
 }

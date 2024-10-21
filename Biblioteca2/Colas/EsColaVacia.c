@@ -13,6 +13,8 @@
 bool EsColaVacia(COLA *Cola)
 {
     
-    // Código del Alumno
-    
+    if (Cola->Cabecera == NULL) {
+        return true;
+    }
+    return false;    
 }

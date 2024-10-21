@@ -14,6 +14,18 @@
 LIBRO **InitOrden(LIBRO *Fichas)
 {
     
-    // Código del alumno
+    LIBRO **Orden;
+    int i;
+    
+    Orden=(LIBRO **)malloc(Estadisticas.NumeroFichas*sizeof(LIBRO *));
+    if (Orden == NULL) {
+        return NULL;
+    }
+    
+    for (i=0;i<Estadisticas.NumeroFichas;i++) {
+        Orden[i]=&Fichas[i];
+    }
+    
+    return Orden;
     
 }

@@ -13,6 +13,18 @@
 PILA *Desapilar(PILA *Pila,void **Elemento)
 {
 
-    // Código del Alumno
+    NODO *NodoAux;
+
+    if (Pila == NULL) {
+        return NULL;
+    }
+
+    NodoAux=Pila;
+    *Elemento=NodoAux->Elemento;
+    Pila=Pila->Siguiente;
+
+    free(NodoAux);
+
+    return Pila;
     
 }

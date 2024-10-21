@@ -12,7 +12,10 @@
 
 void *ConsultarCola(COLA *Cola)
 {
+    if (Cola->Cabecera == NULL) {
+        return NULL;
+    }
+    return Cola->Cabecera->Elemento;
     
-    // Código del Alumno
     
 }

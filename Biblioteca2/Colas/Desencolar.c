@@ -13,6 +13,23 @@
 void* Desencolar(COLA *Cola)
 {
     
-    // Código del Alumno
+    NODO *NodoAux;
+    void *Elemento;
+    
+    if (Cola->Cabecera == NULL) {
+        return NULL;
+    }
+    
+    NodoAux=Cola->Cabecera;
+    Elemento=NodoAux->Elemento;
+    
+    Cola->Cabecera=Cola->Cabecera->Siguiente;
+    if (Cola->Cabecera == NULL) {
+        Cola->Final=NULL;
+    }
+    
+    free(NodoAux);
+    
+    return Elemento;
     
 }

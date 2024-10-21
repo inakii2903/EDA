@@ -12,6 +12,25 @@
 void *BorrarListaIzquierda(LISTA *Lista)
 {
     
-    // Código del Alumno
+    NODO *NodoAux;
+    void *Elemento;
+    
+    if (Lista->Primero == NULL) {
+        return NULL;
+    }
+    
+    NodoAux=Lista->Primero;
+    Elemento=NodoAux->Elemento;
+    
+    if (Lista->Primero == Lista->Ultimo) {
+        Lista->Primero=NULL;
+        Lista->Ultimo=NULL;
+    } else {
+        Lista->Primero=Lista->Primero->Siguiente;
+    }
+    
+    free(NodoAux);
+    
+    return Elemento;
     
 }

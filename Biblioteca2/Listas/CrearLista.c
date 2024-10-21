@@ -12,6 +12,16 @@
 LISTA *CrearLista()
 {
     
-    // Código del Alumno
+    LISTA *NuevaLista;
+    
+    NuevaLista=(LISTA *)malloc(sizeof(LISTA));
+    if (NuevaLista == NULL) {
+        return NULL;
+    }
+    
+    NuevaLista->Primero=NULL;
+    NuevaLista->Ultimo=NULL;
+    
+    return NuevaLista;
     
 }

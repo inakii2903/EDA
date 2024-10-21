@@ -13,6 +13,10 @@
 bool EsPilaVacia(PILA *Pila)
 {
 
-    // Código del Alumno
+    if (Pila == NULL) {
+        return true;
+    }
+
+    return false;
   
 }

@@ -12,6 +12,10 @@
 void *ConsultarCima(PILA *Pila)
 {
 
-    // Código del Alumno
+    if (Pila == NULL) {
+        return NULL;
+    }
+
+    return Pila->Elemento;
          
 }

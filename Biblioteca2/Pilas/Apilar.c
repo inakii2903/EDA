@@ -13,6 +13,16 @@
 PILA *Apilar(PILA *Pila,void *Elemento)
 {
 
-    // Código del Alumno
+    NODO *NodoAux;
+
+    NodoAux=(NODO *)malloc(sizeof(NODO));
+    if (NodoAux == NULL) {
+        return NULL;
+    }
+
+    NodoAux->Elemento=Elemento;
+    NodoAux->Siguiente=Pila;
+
+    return NodoAux;
     
 }

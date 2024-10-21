@@ -12,6 +12,10 @@
 void *ConsultarListaIzquierda(LISTA *Lista)
 {
     
-    // Código del Alumno
+    if (Lista->Primero == NULL) {
+        return NULL;
+    }
+    
+    return Lista->Primero->Elemento;
     
 }

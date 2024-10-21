@@ -15,6 +15,28 @@
 int Encolar(COLA *Cola, void *Elemento)
 {
     
-    // Código del Alumno
+    NODO *NodoAux;
+    
+    if (Cola == NULL) {
+        return -1;
+    }
+    
+    NodoAux=(NODO *)malloc(sizeof(NODO));
+    if (NodoAux == NULL) {
+        return -1;
+    }
+    
+    NodoAux->Elemento=Elemento;
+    NodoAux->Siguiente=NULL;
+    
+    if (Cola->Cabecera == NULL) {
+        Cola->Cabecera=NodoAux;
+    } else {
+        Cola->Final->Siguiente=NodoAux;
+    }
+    
+    Cola->Final=NodoAux;
+    
+    return 0;
     
 }

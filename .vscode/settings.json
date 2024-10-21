@@ -3,6 +3,8 @@
         "comun.h": "c",
         "curses.h": "c",
         "ficheros.h": "c",
-        "listados.h": "c"
+        "listados.h": "c",
+        "menus.h": "c",
+        "Colas.h": "c",
     }
 }

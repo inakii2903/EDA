@@ -13,6 +13,9 @@
 bool EsListaVacia(LISTA *Lista)
 {
     
-    // Código del Alumno
+    if (Lista->Primero == NULL) {
+        return true;
+    }
+    return false;
     
 }
