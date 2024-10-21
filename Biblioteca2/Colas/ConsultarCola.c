@@ -17,5 +17,5 @@ void *ConsultarCola(COLA *Cola)
     }
     return Cola->Cabecera->Elemento;
     
-    
+
 }
