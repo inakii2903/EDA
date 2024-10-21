@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "comun.h": "c",
+        "curses.h": "c",
+        "ficheros.h": "c"
+    }
+}
