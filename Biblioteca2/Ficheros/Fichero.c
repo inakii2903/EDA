@@ -30,16 +30,16 @@ void Fichero(LIBRO **Fichas,int OpcionMenu)
     // Se invoca cada función según la opción de menú seleccionada
     switch (OpcionMenu) {
         case 21:    // Importar un fichero a una lista nueva
-            //ImportarFichero(Fichas,Wfichero,false);
+            ImportarFichero(Fichas,Wfichero,false);
             break;
         case 22:    // Sumar los libros de un fichero a una lista existente
-            //ImportarFichero(Fichas,Wfichero,true);
+            ImportarFichero(Fichas,Wfichero,true);
             break;
         case 23:    // Exportar la lista de libros a un fichero
-            //ExportarFichero(Fichas,Wfichero);
+            ExportarFichero(Fichas,Wfichero);
             break;
         case 24:    // Eliminar la lista de libros existente  
-            //DescartarFichero(Fichas,Wfichero);
+            DescartarFichero(Fichas,Wfichero);
             break;
     }
 

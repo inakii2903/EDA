@@ -92,8 +92,9 @@ void main()
                     VentanaError("No hay fichas de libros");
                     break;
                 }
-                //Orden=InitOrden(Fichas);
-                //Listado1(Orden,Estadisticas.NumeroFichas,Fichas);
+                Orden=InitOrden(Fichas);
+                
+                Listado1(Orden,Estadisticas.NumeroFichas,Fichas);
                 free(Orden);
                 break;
             case 321:   //Listado por título. Orden Selección. (Método 1)
@@ -109,8 +110,8 @@ void main()
                     VentanaError("No hay fichas de libros");
                     break;
                 }
-                //Orden=InitOrden(Fichas);
-                //Listado2(Orden,Estadisticas.NumeroFichas,Fichas);
+                Orden=InitOrden(Fichas);
+                Listado2(Orden,Estadisticas.NumeroFichas,Fichas);
                 free(Orden);
                 break;
             case 352:   //Listado por título. Orden Burbuja. (Método 2)
