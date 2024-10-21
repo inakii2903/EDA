@@ -24,6 +24,7 @@ void main()
 
     //Arrays para almacenar los libros
     LIBRO *Fichas=NULL;
+    LIBRO **Orden=NULL;
 
     //Inicializacion Variables GLobales
     InitGlobal();
@@ -87,6 +88,14 @@ void main()
             case 25:    //Salir
                 break;
             case 310:   //Listado por número (Método 1)
+                if (Estadisticas.NumeroFichas == 0) {
+                    VentanaError("No hay fichas de libros");
+                    break;
+                }
+                Orden=InitOrden(Fichas);
+                Listado1(Orden,Estadisticas.NumeroFichas,Fichas);
+                free(Orden);
+                break;
             case 321:   //Listado por título. Orden Selección. (Método 1)
             case 322:   //Listado por título. Orden Burbuja. (Método 1)
             case 323:   //Listado por título. Orden Inserción. (Método 1)
@@ -96,6 +105,14 @@ void main()
             case 333:   //Listado por autor. Orden Inserción. (Método 1)
             case 334:   //Listado por autor. Orden Quicksort. (Método 1)
             case 340:   //Listado por número. (Método 2)
+                if (Estadisticas.NumeroFichas == 0) {
+                    VentanaError("No hay fichas de libros");
+                    break;
+                }
+                Orden=InitOrden(Fichas);
+                Listado2(Orden,Estadisticas.NumeroFichas,Fichas);
+                free(Orden);
+                break;
             case 352:   //Listado por título. Orden Burbuja. (Método 2)
             case 353:   //Listado por título. Orden Inserción. (Método 2)
             case 354:   //Listado por título. Orden Quicksort. (Método 2)

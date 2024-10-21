@@ -1,3 +1,4 @@
+// "C:\\mingw64\\opt\\include"
 #ifndef NCOMUN
     #define NCOMUN
 
@@ -13,6 +14,12 @@
 
 //Include de Curses
 #include <ncursesw/curses.h>
+
+//Definición genérica de NODO
+typedef struct _Nodo {
+    void *Elemento;
+    struct _Nodo *Siguiente;
+} NODO;
 
 //Estructura de Ficha de Libro
 typedef struct _libro {
@@ -45,5 +52,7 @@ extern struct _Estadisticas {
 
 //Defines de la aplicación
 #define KEY_ESC 27
+#define ORDEN_POR_TITULO 0
+#define ORDEN_POR_AUTOR 1
 
 #endif
