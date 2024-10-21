@@ -13,13 +13,9 @@
 PILA *Apilar(PILA *Pila,void *Elemento)
 {
 
-    NODO *NodoAux;
+    NODO *NodoAux = NULL;
 
     NodoAux=(NODO *)malloc(sizeof(NODO));
-    if (NodoAux == NULL) {
-        return NULL;
-    }
-
     NodoAux->Elemento=Elemento;
     NodoAux->Siguiente=Pila;
 

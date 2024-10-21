@@ -13,12 +13,7 @@
 PILA *Desapilar(PILA *Pila,void **Elemento)
 {
 
-    NODO *NodoAux;
-
-    if (Pila == NULL) {
-        return NULL;
-    }
-
+    NODO *NodoAux = NULL;
     NodoAux=Pila;
     *Elemento=NodoAux->Elemento;
     Pila=Pila->Siguiente;

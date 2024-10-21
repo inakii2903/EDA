@@ -14,16 +14,14 @@
 LIBRO **InitOrden(LIBRO *Fichas)
 {
     
-    LIBRO **Orden;
+    LIBRO **Orden = NULL;
     int i;
     
-    Orden=(LIBRO **)malloc(Estadisticas.NumeroFichas*sizeof(LIBRO *));
-    if (Orden == NULL) {
-        return NULL;
-    }
-    
+    Orden=malloc(Estadisticas.NumeroFichas*sizeof(LIBRO *));
+
     for (i=0;i<Estadisticas.NumeroFichas;i++) {
-        Orden[i]=&Fichas[i];
+
+        Orden[i]= Fichas + i; //NO PONER NUNCA &Fichas[i] ya que = &(*(Fichas+i)) = Fichas+i
     }
     
     return Orden;

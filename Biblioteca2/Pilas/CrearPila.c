@@ -13,9 +13,6 @@ PILA *CrearPila()
 {
 
     PILA *nuevaPila = (PILA *)malloc(sizeof(PILA));
-    if (nuevaPila == NULL) {
-        return NULL;
-    }
     nuevaPila->Elemento = NULL;
     return nuevaPila;
 
