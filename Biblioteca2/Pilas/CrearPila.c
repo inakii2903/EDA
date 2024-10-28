@@ -15,7 +15,5 @@ PILA *CrearPila()
     PILA *nuevaPila = (PILA *)malloc(sizeof(PILA));
     nuevaPila->Elemento = NULL;
     return nuevaPila;
-
-
-  
+ 
 }
