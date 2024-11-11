@@ -28,14 +28,6 @@ LIBRO **InitOrden(LIBRO *Fichas)
         }
     */
    
-    for (i = 0; i < Estadisticas.NumeroFichas; i++)
-    {
-        Orden[i] = Fichas + i;
-    
-    LIBRO **Orden = NULL;
-    int i;
-    
-    Orden=malloc(Estadisticas.NumeroFichas*sizeof(LIBRO *));
 
     for (i=0;i<Estadisticas.NumeroFichas;i++) {
 
