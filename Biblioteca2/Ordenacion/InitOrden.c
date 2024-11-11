@@ -26,4 +26,5 @@ LIBRO **InitOrden(LIBRO *Fichas)
     
     return Orden;
     
+    
 }
