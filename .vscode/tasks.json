@@ -13,9 +13,11 @@
                 "Ficheros\\*.c",
                 "Libros\\*.c",
                 "Comun\\*.c",
+                "Listados\\*.c",
                 "-LC:\\mingw64\\opt\\lib",
                 "-lncursesw",
                 "Ventanas\\*.o",
+                "Ficheros\\*.o",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
