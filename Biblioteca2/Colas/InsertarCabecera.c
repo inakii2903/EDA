@@ -13,6 +13,11 @@
 
 int InsertarCabecera(COLA *Cola, void *Elemento)
 {
+    // Alocar espacio para un nuevo nodo
+    // Si no se ha podido alocar espacio, devolver -1
+    // Inicializar el nodo con el elemento dado
+    // El nuevo nodo apunta a la cabecera de la cola
+    
     
     NODO *NodoAux;
     

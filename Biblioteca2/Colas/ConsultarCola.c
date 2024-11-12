@@ -12,9 +12,11 @@
 
 void *ConsultarCola(COLA *Cola)
 {
+    // Si la cola está vacía, devolver NULL
     if (Cola->Cabecera == NULL) {
         return NULL;
     }
+    // Devolver el primer elemento de la cola   
     return Cola->Cabecera->Elemento;
     
 

@@ -12,6 +12,10 @@
 
 COLA *CrearCola()
 {
+    // Alocar espacio para la cola
+    // Inicializar la cabecera y el final a NULL
+    // Devolver la cola creada 
+
     COLA *NuevaCola;
 
     NuevaCola=(COLA *)malloc(sizeof(COLA));
