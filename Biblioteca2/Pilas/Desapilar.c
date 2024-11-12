@@ -13,6 +13,10 @@
 PILA *Desapilar(PILA *Pila,void **Elemento)
 {
 
+    //Desapilar el primer elemento de la pila
+    //Guardar el puntero al elemento desapilado en *Elemento
+    //Devolver el nuevo puntero al TAD Pila
+
     NODO *NodoAux = NULL;
     NodoAux=Pila;
     *Elemento=NodoAux->Elemento;

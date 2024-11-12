@@ -11,6 +11,9 @@
 
 PILA *CrearPila()
 {
+    //Crear un nuevo nodo
+    //Devolver el puntero al nuevo nodo
+    //Si no se puede crear devolver NULL
 
     PILA *nuevaPila = (PILA *)malloc(sizeof(PILA));
     nuevaPila->Elemento = NULL;

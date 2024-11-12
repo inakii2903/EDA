@@ -13,6 +13,10 @@
 bool EsPilaVacia(PILA *Pila)
 {
 
+    //Comprobar si la pila está vacía
+    //Devolver true si está vacía
+    //Devolver false si tiene elementos
+    
     if (Pila == NULL) {
         return true;
     }

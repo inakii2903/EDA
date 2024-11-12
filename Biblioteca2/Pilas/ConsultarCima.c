@@ -11,6 +11,8 @@
 
 void *ConsultarCima(PILA *Pila)
 {
+    //Devolver el puntero al primer elemento de la pila
+    //Si la pila está vacía devolver NULL
 
     if (Pila == NULL) {
         return NULL;

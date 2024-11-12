@@ -13,6 +13,10 @@
 PILA *Apilar(PILA *Pila,void *Elemento)
 {
 
+    //Crear un nuevo nodo
+    //Insertar el elemento en el nodo
+    //Enlazar el nuevo nodo al comienzo de la pila
+
     NODO *NodoAux = NULL;
     NodoAux=(NODO *)malloc(sizeof(NODO));
     NodoAux->Elemento=Elemento;
