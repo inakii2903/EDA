@@ -12,6 +12,9 @@
 void *ConsultarListaDerecha(LISTA *Lista)
 {
     
+    // Si la lista está vacía, devolver NULL
+    // Si no, devolver el último elemento de la lista
+
     if (Lista->Ultimo == NULL) {
         return NULL;
     }

@@ -12,7 +12,9 @@
 
 bool EsListaVacia(LISTA *Lista)
 {
-    
+    // Si la lista está vacía, devolver true
+    // Si no, devolver false
+
     if (Lista->Primero == NULL) {
         return true;
     }

@@ -14,6 +14,13 @@
 int InsertarListaDerecha(LISTA *Lista, void *Elemento)
 {
     
+    // Alocar espacio para un nuevo nodo
+    // Si no se ha podido alocar espacio, devolver -1
+    // Inicializar el nodo con el elemento dado
+    // Si la lista está vacía, la cabecera apunta al nuevo nodo
+    // Si no, el nodo final apunta al nuevo nodo
+    // El nodo final apunta al nuevo nodo
+
     NODO *NodoAux;
     
     if (Lista == NULL) {

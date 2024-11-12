@@ -12,6 +12,11 @@
 LISTA *CrearLista()
 {
     
+    // Alocar espacio para la lista
+    // Inicializar la cabecera y el final a NULL
+    // Devolver la lista creada
+    
+
     LISTA *NuevaLista;
     
     NuevaLista=(LISTA *)malloc(sizeof(LISTA));

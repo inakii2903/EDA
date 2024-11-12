@@ -11,6 +11,9 @@
 
 void *ConsultarListaIzquierda(LISTA *Lista)
 {
+
+    // Si la lista está vacía, devolver NULL
+    // Si no, devolver el primer elemento de la lista
     
     if (Lista->Primero == NULL) {
         return NULL;

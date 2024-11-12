@@ -11,7 +11,10 @@
 
 int LongitudLista(LISTA *Lista)
 {
+    // Recorrer la lista contando los elementos
+    // Devolver el número de elementos
     
+
     NODO *NodoAux;
     int Longitud=0;
     
