@@ -18,6 +18,7 @@
                 "Colas\\*.c",
                 "Listas\\*.c",
                 "Ordenacion\\*.c",
+                "Busqueda\\*.c",
                 "-LC:\\mingw64\\opt\\lib",
                 "-lncursesw",
                 "Ventanas\\*.o",
