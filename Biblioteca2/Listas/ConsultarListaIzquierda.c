@@ -11,7 +11,14 @@
 
 void *ConsultarListaIzquierda(LISTA *Lista)
 {
+
+    // Si la lista está vacía, devolver NULL
+    // Si no, devolver el primer elemento de la lista
     
-    // Código del Alumno
+    if (Lista->Primero == NULL) {
+        return NULL;
+    }
+    
+    return Lista->Primero->Elemento;
     
 }

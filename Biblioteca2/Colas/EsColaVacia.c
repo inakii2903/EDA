@@ -13,6 +13,11 @@
 bool EsColaVacia(COLA *Cola)
 {
     
-    // Código del Alumno
-    
+    // Si la cabecera de la cola es NULL, la cola está vacía
+    // Devolver true
+
+    if (Cola->Cabecera == NULL) {
+        return true;
+    }
+    return false;    
 }

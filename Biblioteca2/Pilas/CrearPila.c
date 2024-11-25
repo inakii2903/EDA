@@ -11,7 +11,12 @@
 
 PILA *CrearPila()
 {
+    //Crear un nuevo nodo
+    //Devolver el puntero al nuevo nodo
+    //Si no se puede crear devolver NULL
 
-    // Código del Alumno
-  
+    PILA *nuevaPila = (PILA *)malloc(sizeof(PILA));
+    nuevaPila->Elemento = NULL;
+    return nuevaPila;
+ 
 }

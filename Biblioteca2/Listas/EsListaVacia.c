@@ -12,7 +12,12 @@
 
 bool EsListaVacia(LISTA *Lista)
 {
-    
-    // Código del Alumno
+    // Si la lista está vacía, devolver true
+    // Si no, devolver false
+
+    if (Lista->Primero == NULL) {
+        return true;
+    }
+    return false;
     
 }

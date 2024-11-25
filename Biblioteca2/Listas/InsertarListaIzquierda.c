@@ -13,7 +13,34 @@
 
 int InsertarListaIzquierda(LISTA *Lista, void *Elemento)
 {
+
+    // Alocar espacio para un nuevo nodo
+    // Si no se ha podido alocar espacio, devolver -1
+    // Inicializar el nodo con el elemento dado
+    // El nodo final apunta al nuevo nodo
+    // Si la lista está vacía, la cabecera apunta al nuevo nodo
+    // Si no, el nodo final apunta al nuevo nodo
     
-    // Código del Alumno
+    NODO *NodoAux;
+    
+    if (Lista == NULL) {
+        return -1;
+    }
+    
+    NodoAux=(NODO *)malloc(sizeof(NODO));
+    if (NodoAux == NULL) {
+        return -1;
+    }
+    
+    NodoAux->Elemento=Elemento;
+    NodoAux->Siguiente=Lista->Primero;
+    
+    Lista->Primero=NodoAux;
+    
+    if (Lista->Ultimo == NULL) {
+        Lista->Ultimo=NodoAux;
+    }
+    
+    return 0;
     
 }

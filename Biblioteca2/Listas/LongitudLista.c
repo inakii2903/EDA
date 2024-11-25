@@ -11,7 +11,20 @@
 
 int LongitudLista(LISTA *Lista)
 {
+    // Recorrer la lista contando los elementos
+    // Devolver el número de elementos
     
-    // Código del Alumno
+
+    NODO *NodoAux;
+    int Longitud=0;
+    
+    NodoAux=Lista->Primero;
+    
+    while (NodoAux != NULL) {
+        Longitud++;
+        NodoAux=NodoAux->Siguiente;
+    }
+    
+    return Longitud;
     
 }

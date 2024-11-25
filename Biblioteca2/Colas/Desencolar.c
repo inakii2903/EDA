@@ -12,7 +12,29 @@
 
 void* Desencolar(COLA *Cola)
 {
+    // Si la cola está vacía, devolver NULL
+    // Si no, devolver el primer elemento de la cola y eliminarlo de la cola
+    // Liberar el nodo desencolado
+    // Si la cola se queda vacía, actualizar la cabecera y el final a NULL
+    // Devolver el puntero al elemento desencolado
+
+    NODO *NodoAux;
+    void *Elemento;
     
-    // Código del Alumno
+    if (Cola->Cabecera == NULL) {
+        return NULL;
+    }
+    
+    NodoAux=Cola->Cabecera;
+    Elemento=NodoAux->Elemento;
+    
+    Cola->Cabecera=Cola->Cabecera->Siguiente;
+    if (Cola->Cabecera == NULL) {
+        Cola->Final=NULL;
+    }
+    
+    free(NodoAux);
+    
+    return Elemento;
     
 }

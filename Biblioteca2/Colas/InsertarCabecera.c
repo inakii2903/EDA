@@ -13,7 +13,32 @@
 
 int InsertarCabecera(COLA *Cola, void *Elemento)
 {
+    // Alocar espacio para un nuevo nodo
+    // Si no se ha podido alocar espacio, devolver -1
+    // Inicializar el nodo con el elemento dado
+    // El nuevo nodo apunta a la cabecera de la cola
     
-    // Código del Alumno
+    
+    NODO *NodoAux;
+    
+    if (Cola == NULL) {
+        return -1;
+    }
+    
+    NodoAux=(NODO *)malloc(sizeof(NODO));
+    if (NodoAux == NULL) {
+        return -1;
+    }
+    
+    NodoAux->Elemento=Elemento;
+    NodoAux->Siguiente=Cola->Cabecera;
+    
+    Cola->Cabecera=NodoAux;
+    
+    if (Cola->Final == NULL) {
+        Cola->Final=NodoAux;
+    }
+    
+    return 0;
     
 }

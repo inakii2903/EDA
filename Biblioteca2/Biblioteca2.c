@@ -93,6 +93,7 @@ void main()
                     break;
                 }
                 Orden=InitOrden(Fichas);
+                
                 Listado1(Orden,Estadisticas.NumeroFichas,Fichas);
                 free(Orden);
                 break;
