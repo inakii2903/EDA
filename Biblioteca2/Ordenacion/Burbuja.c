@@ -20,7 +20,24 @@ LIBRO **Burbuja(LIBRO *Ficha,int Campo)
     gettimeofday(&inicio,NULL);
     Orden=InitOrden(Ficha);
 
-    //Código del Alumno del método de ordenación de la Burbuja
+    for (int i=0;i<Estadisticas.NumeroFichas-1;i++) {
+        for (int j=0;j<Estadisticas.NumeroFichas-1;j++) {
+            if (Campo == ORDEN_POR_TITULO) {
+                if (strcmp(Orden[j]->Titulo,Orden[j+1]->Titulo) > 0) {
+                    LIBRO *auxiliar=Orden[j];
+                    Orden[j]=Orden[j+1];
+                    Orden[j+1]=auxiliar;
+                }
+            }
+            else {
+                if (strcmp(Orden[j]->NomAutor,Orden[j+1]->NomAutor) > 0) {
+                    LIBRO *auxiliar=Orden[j];
+                    Orden[j]=Orden[j+1];
+                    Orden[j+1]=auxiliar;
+                }
+            }
+        }
+    }
     
     gettimeofday(&fin,NULL);
     Estadisticas.TiempoBurbuja=DifTiempo(inicio,fin);

@@ -16,14 +16,34 @@ LIBRO **Insercion(LIBRO *Ficha,int Campo)
 {
     LIBRO **Orden;
     struct timeval inicio, fin;
-    //int i,j,k;
-    //LIBRO *auxiliar;
-    //char Autor1[256], Autor2[256];
+    int i,j,k;
+    LIBRO *auxiliar;
+    char Autor1[256], Autor2[256];
 
     gettimeofday(&inicio,NULL);
     Orden=InitOrden(Ficha);
 
-    //Código del Alumno del Algoritmo de ordenación por Inserción
+    for (i=1;i<Estadisticas.NumeroFichas;i++) {
+        auxiliar=Orden[i];
+        if (Campo == ORDEN_POR_TITULO) {
+            j=i-1;
+            while ((j>=0) && (strcmp(Orden[j]->Titulo,auxiliar->Titulo) > 0)) {
+                Orden[j+1]=Orden[j];
+                j--;
+            }
+        }
+        else {
+            j=i-1;
+            while ((j>=0) && (strcmp(Orden[j]->NomAutor,auxiliar->NomAutor) > 0)) {
+                Orden[j+1]=Orden[j];
+                j--;
+            }
+        }
+        Orden[j+1]=auxiliar;
+    }
+
+
+    
     
     gettimeofday(&fin,NULL);
     Estadisticas.TiempoInsercion=DifTiempo(inicio,fin);
