@@ -26,7 +26,39 @@ void BusquedaSecuencial(LIBRO *Fichas)
 
     gettimeofday(&inicio,NULL);
 
-    //Código del Alumno del Algoritmo de Búsqueda por Selección
+
+
+    Resultado=(LIBRO **)malloc(sizeof(LIBRO *)*Estadisticas.NumeroFichas);
+    if (Resultado == NULL) {
+        VentanaError("Error en la asignación de memoria");
+        return;
+    }
+
+    // Si el autor tiene dos apellidos, solo tomar el primero
+    char *space = strchr(Autor, ' ');
+    if (space != NULL) {
+        *space = '\0';
+    }
+
+    for (int i = 1; i < Estadisticas.NumeroFichas; i++) {
+        // Si el autor en la ficha tiene dos apellidos, solo tomar el primero
+        char *spaceFicha = strchr(Fichas[i].ApellAutor, ' ');
+        if (spaceFicha != NULL) {
+            *spaceFicha = '\0';
+        }
+
+        if (strcasecmp(Fichas[i].ApellAutor, Autor) == 0) {
+            Resultado[Hallados] = &Fichas[i];
+            Hallados++;
+        }
+
+        // Restaurar el apellido completo en la ficha
+        if (spaceFicha != NULL) {
+            *spaceFicha = ' ';
+        }
+    }
+
+
 
     gettimeofday(&fin,NULL);
     Estadisticas.TiempoBusquedaSecuencial=DifTiempo(inicio,fin);
@@ -40,3 +72,8 @@ void BusquedaSecuencial(LIBRO *Fichas)
     return;
     
 }
+
+
+
+
+

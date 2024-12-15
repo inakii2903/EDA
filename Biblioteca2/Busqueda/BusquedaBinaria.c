@@ -22,6 +22,7 @@ void BusquedaBinaria(LIBRO *Fichas)
     bool Encontrado;
 
     // Añadir aquí la definición del resto de variables usadas
+    
 
     if ((Autor=LeerAutor()) == NULL)
         return;
@@ -30,7 +31,11 @@ void BusquedaBinaria(LIBRO *Fichas)
 
     Orden=Quicksort(Fichas, ORDEN_POR_AUTOR);
 
-    //Código del alumno del Algoritmo de Búsqueda Binaria
+    Resultado=(LIBRO **)malloc(sizeof(LIBRO *)*Estadisticas.NumeroFichas);
+    if (Resultado == NULL) {
+        VentanaError("Error en la asignación de memoria");
+        return;
+    }
 
     free(Orden);
     
