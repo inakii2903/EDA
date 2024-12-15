@@ -18,7 +18,8 @@ void BusquedaSecuencial(LIBRO *Fichas)
     LIBRO **Resultado=NULL;
     int Hallados=0;
     struct timeval inicio, fin;
-
+    int i;
+    
     // Añadir aquí la definición del resto de variables usadas
     
     if ((Autor=LeerAutor()) == NULL)
@@ -40,7 +41,7 @@ void BusquedaSecuencial(LIBRO *Fichas)
         *space = '\0';
     }
 
-    for (int i = 1; i < Estadisticas.NumeroFichas; i++) {
+    for ( i = 1; i < Estadisticas.NumeroFichas; i++) {
         // Si el autor en la ficha tiene dos apellidos, solo tomar el primero
         char *spaceFicha = strchr(Fichas[i].ApellAutor, ' ');
         if (spaceFicha != NULL) {
