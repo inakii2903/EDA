@@ -30,7 +30,7 @@ LIBRO **Burbuja(LIBRO *Ficha,int Campo)
                 }
             }
             else {
-                if (strcmp(Orden[j]->NomAutor,Orden[j+1]->NomAutor) > 0) {
+                if (strcmp(Orden[j]->ApellAutor,Orden[j+1]->ApellAutor) > 0) {
                     LIBRO *auxiliar=Orden[j];
                     Orden[j]=Orden[j+1];
                     Orden[j+1]=auxiliar;

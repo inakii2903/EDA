@@ -34,7 +34,7 @@ LIBRO **Insercion(LIBRO *Ficha,int Campo)
         }
         else {
             j=i-1;
-            while ((j>=0) && (strcmp(Orden[j]->NomAutor,auxiliar->NomAutor) > 0)) {
+            while ((j>=0) && (strcmp(Orden[j]->ApellAutor,auxiliar->ApellAutor) > 0)) {
                 Orden[j+1]=Orden[j];
                 j--;
             }

@@ -12,6 +12,17 @@
 
 #include "../Biblioteca.h"
 
+
+// Función de comparación para el método Quicksort
+static int Qcmp(LIBRO *orden1, LIBRO *orden2, int Campo){
+    if (Campo == ORDEN_POR_TITULO){
+        return strcmp(orden1->Titulo, orden2->Titulo);
+    } else {
+        return strcmp(orden1->ApellAutor, orden2->NomAutor);
+    }
+
+}
+
 static void QSort(LIBRO **Orden,int izquierda, int derecha, int Campo)
 {
     int i,j;
@@ -28,10 +39,10 @@ static void QSort(LIBRO **Orden,int izquierda, int derecha, int Campo)
             while (strcmp(Orden[j]->Titulo,Pivote->Titulo) > 0)
                 j--;
         }
-        else {
-            while (strcmp(Orden[i]->NomAutor,Pivote->ApellAutor) < 0)
+        else if(Campo == ORDEN_POR_AUTOR) {
+            while (strcmp(Orden[i]->ApellAutor,Pivote->ApellAutor) < 0)
                 i++;
-            while (strcmp(Orden[j]->NomAutor,Pivote->ApellAutor) > 0)
+            while (strcmp(Orden[j]->ApellAutor,Pivote->ApellAutor) > 0)
                 j--;
         }
         if (i <= j) {
@@ -52,48 +63,11 @@ static void QSort(LIBRO **Orden,int izquierda, int derecha, int Campo)
 
 }
 
-// Función de comparación para el método Quicksort
-static int Qcmp(LIBRO *orden1, LIBRO *orden2, int Campo){
-    if (Campo == ORDEN_POR_TITULO){
-        return strcmp(orden1->Titulo, orden2->Titulo);
-    } else {
-        return strcmp(orden1->NomAutor, orden2->ApellAutor);
-    }
 
-}
 
-// Función de ordenación Quicksort
 
-// static void Qsort(LIBRO *Ficha, int izquierda, int derecha, int Campo){
-//     int i, j;
-//     LIBRO **Orden, Auxiliar;
 
-//     i = izquierda;
-//     j = derecha;
-//     Orden = Ficha[(izquierda + derecha) / 2];
 
-//     do {
-//         while (Qcmp(&Ficha[i], Pivote, Campo) < 0)
-//             i++;
-//         while (Qcmp(&Ficha[j], Pivote, Campo) > 0)
-//             j--;
-//         if (i <= j){
-//             Auxiliar = Ficha[i];
-//             Ficha[i] = Ficha[j];
-//             Ficha[j] = Auxiliar;
-//             i++;
-//             j--;
-//         }
-//     } while (i <= j);
-
-//     if (izquierda < j)
-//         Qsort(Ficha, izquierda, j, Campo);
-//     if (i < derecha)
-//         Qsort(Ficha, i, derecha, Campo);
-
-//     return;
-
-// }
 
 LIBRO **Quicksort(LIBRO *Ficha, int Campo)
 {
